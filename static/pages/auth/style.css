@@ -1,0 +1,92 @@
+body{
+    background-color:#e8f1e5;
+    background-color: var(--bg-200);
+
+}
+
+.form{
+    background-color: var(--primary-200);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    max-width: 400px;
+    margin: 3rem auto;
+    width: 80%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+button{
+    background-color: var(--accent-200);
+    padding: 0.45rem;
+    border-radius: 0.5rem;
+    color: var(--bg-300);
+    border: none;
+}
+
+input{
+    padding: 0.45rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+input:focus{
+    border: none;
+    outline-color: var(--primary-300);
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    background-color: var(--primary-200);
+    color: var(--bg-200);
+   padding: 1rem;
+}
+
+header{
+    background-color: var(--primary-200);
+    color: var(--accent-200);
+    padding: 1rem;
+    margin:0 0 1rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sig{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    color: var(--accent-200);
+   padding: 1rem;
+}
+
+.signup{
+margin: 1rem;
+}
+
+.kid{
+    margin: 1rem;
+}
+
+.b{
+    display: flex;
+}
