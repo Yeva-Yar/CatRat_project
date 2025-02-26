@@ -25,9 +25,11 @@ const switchForm = (form) => {
     childrenForm.style.display = form === "children" ? "block" : "none";
 
     //перемикаємо кнопки
-    loginButton.disabled = form === "login" ? "none" : "block";
+    loginButton.style.display  = form === "login" ? "none" : "block";
     registerButton.style.display = form === "register" ? "none" : "block";
     childrenButton.style.display = form === "children" ? "none" : "block";
+    
+    loginButton.style.order = form === "children" ? "5" : "2";
 };
 
 // спершу вмикаємо форму логіну

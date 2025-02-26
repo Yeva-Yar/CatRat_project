@@ -14,6 +14,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color:#e8f1e5;
+    background-color: var(--bg-200);
 }
 
 :root {
@@ -27,4 +29,93 @@ body {
     --bg-100:#F2FBEF;
     --bg-200:#e8f1e5;
     --bg-300:#bfc8bd;  
+}
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    background-color: var(--primary-200);
+    color: var(--bg-200);
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header{
+    background-color: var(--primary-200);
+    color: var(--accent-200);
+    padding: 1rem;
+    margin:0 0 1rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+}
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+.task {
+    margin: 5px 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+button{
+    background-color: var(--accent-200);
+    padding: 0.45rem;
+    border-radius: 0.5rem;
+    color: var(--bg-300);
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+input{
+    padding: 0.45rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+input:focus{
+    border: none;
+    outline-color: var(--primary-300);
+}
+
+.form{
+    background-color: var(--primary-200);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    max-width: 400px;
+    margin: 3rem auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

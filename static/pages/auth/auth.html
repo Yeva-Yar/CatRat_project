@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
     <script src="../../leaf.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -18,20 +18,40 @@
         <img src="../../img/logo_preview_rev_1.png" alt="" width="200px">
     </header>
     <main>
-        <div class="form login">
+        <div class="form login" id="login-form">
             <form action="">
+                <h2>Увійти в свій акаунт</h2>
                 <input type="text" placeholder="Login">
                 <input type="text" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form login" id="register-form">
+            <form action="">
+                <h2>Зареєструватися</h2>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Surname">
+                <input type="text" placeholder="Login">
+                <input type="text" placeholder="Password">
+                <input type="text" placeholder="Repeat password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form login" id="children-form">
+            <form action="">
+                <h2>Увійти в дитячий акаунт</h2>
+                <input type="text" placeholder="Code from parents">
                 <button type="submit">Login</button>
             </form>
         </div>
         <div class="sig">
             <h3>У вас ще немає акаунту? Або вам менше 18 років?</h3>
             <div class="b">
-            <button class="signup">Створити акаунт</button>
-            <span>або</span>
-            <button class="kid">Я дитина</button>
-        </div>
+                <button class="signup" id="register-button" onclick="switchForm('register')" style="order: 1">Створити акаунт</button> 
+                <button class="signup" id="login-button" onclick="switchForm('login')" style="order: 2">Увійти</button>
+                <span class="orText"  style="order: 3">або</span> 
+                <button class="kid" id="children-button" onclick="switchForm('children')"  style="order: 4">Я дитина</button>
+            </div>
         </div>
     </main>
     <footer>
