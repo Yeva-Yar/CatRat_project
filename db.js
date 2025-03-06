@@ -1,5 +1,5 @@
 require('dotenv').config();
-console.log(process.env.DB_HOST); // виведе localhost
+
 const mysql = require('mysql2');
 
 const pool = mysql.createPool({

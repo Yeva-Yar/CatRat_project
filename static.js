@@ -7,7 +7,7 @@ const path = require("path")
 
 const static = function (req, res) {
     //З ареси дізнаємось який файл в нас замовляють
-    let filePath = path.join(__dirname, 'static', req.url === '/' ? 'pages/index.html' : req.url); 
+    let filePath = path.join(__dirname, 'static', req.url === '/' ? 'pages/parent.html' : req.url); 
     //дізнаємось тип файлу щоб встановити правельний заголовок до відповіді
     let extname = path.extname(filePath);
 
