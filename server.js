@@ -81,7 +81,7 @@ function protected(req, res) {
     const token = req.headers['authorization']?.split(' ')[1];
     if (!token) {
         res.writeHead(401, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ message: 'Немає доступу' }));
+        return null;
     }
     jwt.verify(token, SECRET_KEY, (err, user) => {
         if (err) {
