@@ -80,6 +80,8 @@ document.querySelector("#login-form").addEventListener("submit", (e) => {
         body: JSON.stringify(body),
     }).then((res) => res.json()).then((data) => {
         localStorage.setItem("token", data.token);
-        window.location.href = "/";
+        document.cookie = `token=${data.token}; path=/`;
+        console.log(data);
+        window.location.assign("/")
     });
 })
