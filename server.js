@@ -18,7 +18,14 @@ createServer(function (req, res) {
             register(req, res);
         } else if (req.method === "POST" && req.url === "/api/login") {
             login(req, res);
-        } else if (req.url == "/") {
+        } else if (req.url == "/api/createChild") {
+            let user = protected(req, res);
+            createChild(req, res, user.id);
+        } else if (req.url == "/api/childLogin") {
+            let user = protected(req, res);
+            childLogin(req, res);
+        }
+         else if (req.url == "/") {
             let user = protected(req, res);
             if (!user) {
                 res.writeHead(302, { location: "/pages/auth/auth.html" });
@@ -91,7 +98,7 @@ function login(req, res) {
             const token = jwt.sign(
                 { id: user.id, login: user.login },
                 SECRET_KEY,
-                { expiresIn: "1h" }
+                { expiresIn: "336h" }
             );
             res.writeHead(200, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ token }));
@@ -111,5 +118,52 @@ function protected(req, res) {
         return user;
     });
     return user;
-
 }
+
+let createChild = (req, res, parent_id) => {
+    let body = "";
+    req.on("data", (chunk) => {
+        body += chunk.toString();
+    });
+    req.on("end", async () => {
+        const { name, email } = JSON.parse(body);
+        const token = jwt.sign(
+            { name, email, parent_id },
+            SECRET_KEY
+        );
+        const sql =
+            "INSERT INTO Children (parent_id, code) VALUES (?, ?)";
+        db.query(sql, [parent_id, token], (err) => {
+            if (err) {
+                res.writeHead(500, { "Content-Type": "application/json" });
+                res.end(JSON.stringify({ message: "Помилка реєстрації" }));
+            } else {
+                res.writeHead(200, { "Content-Type": "application/json" });
+                res.end(
+                    JSON.stringify({ code: token })
+                );
+            }
+        });
+    });
+}
+
+let childLogin = (req, res) => {
+    let body = "";
+    req.on("data", (chunk) => {
+        body += chunk.toString();
+    })
+    req.on("end", () => {
+        body = JSON.parse(body);
+        const code = body.code;
+        db.query("SELECT * FROM Children WHERE code = ?", [code], (err, results) => {
+            if (err || results.length === 0) {
+                res.writeHead(401, { "Content-Type": "application/json" });
+                return res.end(JSON.stringify({ message: "Невірні дані" }));
+            }
+            else {
+                res.end(JSON.stringify({status: "ok"}));
+            }
+        });
+    })
+}
+

@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="leaf.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h3>Не дитячий дохід</h3>
         <img src="../../img/logo_preview_rev_1.png" alt="" width="200px">
     </header>
-
+    <main>
+        <h2>Список завдань:</h2>
+        <ul id="taskList">
+            <!-- Список завдань буде додаватись сюди -->
+             <li>
+                <div class="block">
+                    <h4>Завдання 1</h4><input type="checkbox" name="" id="">
+                </div>
+                <div class="block">
+                    <h4>Завдання 1</h4><input type="checkbox" name="" id="">
+                </div>
+             </li>
+        </ul>
+    </main>
     <footer>
         <p>Автори проєкту: </p>
         <ul>
@@ -21,5 +40,15 @@
             <li>Ярошенко Єва</li>
         </ul>
     </footer>
+    <div class="overlay">
+        <div class="modal">
+            <button id="closeModal">X</button>
+            <h2>Завдання 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <h3>Ціна✨: </h3>
+            <h3>Статус виконання: </h3>
+        </div>
+    </div>
 </body>
+
 </html>

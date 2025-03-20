@@ -85,3 +85,22 @@ document.querySelector("#login-form").addEventListener("submit", (e) => {
         window.location.assign("/")
     });
 })
+
+document.querySelector("#children-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let data = new FormData(e.target);
+    e.target.reset();
+    let body = JSON.stringify({
+        code: data.get("code"),
+    });
+    console.log(obj)
+    fetch("/api/childLogin", {
+        method: "POST",
+        body,
+    }).then((res) => res.json()).then((d) => {
+        if(d.status = "ok") {
+            document.cookie = `token=${data.get("code")}; path=/`;
+            window.location.assign("/")
+        }
+    });
+})
