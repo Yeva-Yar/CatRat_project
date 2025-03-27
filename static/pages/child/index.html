@@ -10,28 +10,28 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+    <script src="../../assets/alertifyjs/alertify.min.js" defer></script>
+    <link rel="stylesheet" href="../../assets/alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" href="../../assets/alertifyjs/css/themes/bootstrap.css">
 </head>
 
 <body>
     <header>
         <h3>Не дитячий дохід</h3>
         <img src="../../img/logo_preview_rev_1.png" alt="" width="200px">
+        <button id="logout">Вихід</button>
     </header>
     <main>
+        <h2>Мій гаманець</h2>
+        <div class="wallet">
+            <p>Ваш баланс:</p>
+            <h3>0</h3>
+            <button id="getMoney">Отримати гроші</button>
+        </div>
         <h2>Список завдань:</h2>
-        <ul id="taskList">
-            <!-- Список завдань буде додаватись сюди -->
-             <li>
-                <div class="block">
-                    <h4>Завдання 1</h4><input type="checkbox" name="" id="">
-                </div>
-                <div class="block">
-                    <h4>Завдання 1</h4><input type="checkbox" name="" id="">
-                </div>
-             </li>
-        </ul>
+        <ul id="taskList"></ul>
     </main>
     <footer>
         <p>Автори проєкту: </p>
@@ -43,10 +43,21 @@
     <div class="overlay">
         <div class="modal">
             <button id="closeModal">X</button>
-            <h2>Завдання 1</h2>
+            <h2>Завдання</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
             <h3>Ціна✨: </h3>
-            <h3>Статус виконання: </h3>
+            <h4>Статус виконання: </h4>
+            <button id="completeTask">Виконав</button>
+            <button id="unCompleteTask">Не виконав</button>
+        </div>
+    </div>
+
+    <div class="check">
+        <div class="checkInner">
+            <button id="closeCheck">X</button>
+            <h2>Чек на зняття коштів</h2>
+            <canvas id="receipt" width="300" height="200"></canvas>
+            <button id="download">Завантажити чек</button>
         </div>
     </div>
 </body>

@@ -11,27 +11,26 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
     <header>
         <h3>Не дитячий дохід</h3>
         <img src="../../img/logo_preview_rev_1.png" alt="" width="200px">
+        <button id="logout">Вихід</button>
     </header>
     <main>
-        <h1>Додавання завдань</h1>
-
-        <!-- Форма для введення завдання -->
-        <div class="form"><form action="">
-            <input type="text" id="taskInput" placeholder="Введіть нове завдання">
-            <button onclick="addTask()">Додати завдання</button>
-        </form></div>
-        <h2>Список завдань:</h2>
-        <ul id="taskList">
-            <!-- Список завдань буде додаватись сюди -->
-        </ul>
-        <button id="addChild">AddChild</button>
+        <h1>Завдання</h1>
+        <button id="addTask">Додати завдання</button>
+        <table id="taskList" border="1px">
+        </table>
+        <div class="childs">
+            <h1>Список дітей</h1>
+            <button id="addChild">AddChild</button>
+            <table class="childList" border="1px">
+            </table>
+        </div>
     </main>
     <footer>
         <p>Автори проєкту: </p>

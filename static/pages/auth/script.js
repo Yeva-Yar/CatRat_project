@@ -91,15 +91,15 @@ document.querySelector("#children-form").addEventListener("submit", (e) => {
     let data = new FormData(e.target);
     e.target.reset();
     let body = JSON.stringify({
-        code: data.get("code"),
+        code: data.get("login"),
     });
-    console.log(obj)
+    console.log(body)
     fetch("/api/childLogin", {
         method: "POST",
         body,
     }).then((res) => res.json()).then((d) => {
         if(d.status = "ok") {
-            document.cookie = `token=${data.get("code")}; path=/`;
+            document.cookie = `token=${data.get("login")}; path=/`;
             window.location.assign("/")
         }
     });
