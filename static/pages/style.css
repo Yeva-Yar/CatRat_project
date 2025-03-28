@@ -90,6 +90,8 @@ form{
 
 button{
     background-color: var(--accent-200);
+    font-family: "Comfortaa", sans-serif; 
+    margin: 1rem;
     padding: 0.45rem;
     border-radius: 0.5rem;
     color: var(--bg-300);

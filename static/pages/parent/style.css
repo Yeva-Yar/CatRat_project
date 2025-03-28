@@ -1,0 +1,19 @@
+
+
+#logout{
+    background-color: rgba(5, 73, 38, 0.386);
+    padding: 1rem;;
+    color: rgb(255, 255, 255);
+    font-family: "Comfortaa", sans-serif; 
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+#logout:hover{
+    background-color: var(--accent-200);;
+}
+
+h1{
+    margin: 1rem;
+}

@@ -152,3 +152,35 @@ margin-top: 1rem;
     color: white;
     background-color: rgb(81, 212, 212);
 }
+
+#getMoney{
+background-color:rgb(251, 255, 137);
+padding: 1rem;;
+color: rgb(0, 0, 0);
+font-family: "Comfortaa", sans-serif;
+}   
+
+.wallet{
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(250, 189, 206);
+    border-radius: 0.5rem;
+}
+ 
+h2{
+    margin-left: 1rem;
+}
+
+#logout{
+    background-color:rgba(213, 163, 210, 0.504) ;
+    padding: 1rem;;
+    color: rgb(255, 255, 255);
+    font-family: "Comfortaa", sans-serif; 
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+#logout:hover{
+    background-color:rgb(213, 163, 210);
+}

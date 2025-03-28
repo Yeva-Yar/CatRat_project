@@ -52,6 +52,9 @@ createServer(function (req, res) {
         else if (req.url.startsWith("/api/getMoney")) {
             getMoney(req, res);
         }
+        else if (req.url == ("/api/getChildrenMoney")) {
+            getChildrenMoney(req, res);
+        }
         else if (req.url == "/") {
             let user = protected(req, res);
             if (!user) {
@@ -345,6 +348,21 @@ function getMoney(req, res) {
         function (err, result) {
             res.writeHead(200);
             res.end();
+        }
+    );
+}
+
+
+function getChildrenMoney(req, res) {
+    let user = protected(req, res);
+    const token = req.headers.cookie?.split("=")[1];
+    db.query(
+        "select score from MicroUsers where code = ?",
+        [token],
+        (err, result) => {
+            res.writeHead(200, { "content-type": "text/json" });
+            console.log(result)
+            res.end(JSON.stringify(result[0]));
         }
     );
 }

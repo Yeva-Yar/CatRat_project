@@ -19,7 +19,7 @@ function getChildrenTasks() {
             </li>
             `;
             });
-            document.querySelector(".wallet h3").innerHTML = tasks[0].score;
+            
         });
 }
 
@@ -98,6 +98,10 @@ function getMoney(value) {
 document.querySelector("#getMoney").addEventListener("click", () => {
     alertify.prompt("Ви хочете отримати кошти?", 0, (e, value) => {
         if (value) {
+            if(value > childrenMoney){
+                alertify.error("Недостатньо коштів");
+                return;
+            }
             getMoney(value);
             fetch(`/api/getMoney?id=${tasks[0].rab}&value=${value}`)
                 .then((res) => res.ok)
@@ -117,3 +121,15 @@ document.querySelector("#logout").addEventListener("click", () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
     window.location.assign("/");
 });
+
+let childrenMoney = 0;
+function getChildrenMoney(){
+    fetch(`/api/getChildrenMoney`)
+        .then((res) => res.json())
+        .then((data) => {
+            childrenMoney = data.score;
+            document.querySelector(".wallet h3").innerHTML = data.score;
+        });
+}
+
+getChildrenMoney();
