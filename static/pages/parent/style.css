@@ -17,3 +17,42 @@
 h1{
     margin: 1rem;
 }
+
+button{
+    padding: 1rem;
+}
+
+/* #taskList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color:var(--primary-200);
+    border-radius: 0.5rem;
+}
+
+#childList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color:var(--primary-200);
+    border-radius: 0.5rem;
+} */
+
+li{
+    background-color:var(--primary-200); 
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    max-width: 80%;
+}
+
+.taskInfo{
+    display: flex;
+    
+}

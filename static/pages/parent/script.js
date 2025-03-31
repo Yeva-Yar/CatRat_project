@@ -34,14 +34,13 @@ function getChildren() {
             list.innerHTML = "";
             data.forEach((child) => {
                 list.innerHTML += `
-                <tr>
-                    <td>${child.name}</td>
-                    <td>${child.code}</td>
-                    <td>${child.score}</td>
-                    <td>
-                        <button onclick="deleteChild(${child.id})">Х</button>
-                    </td>
-                </tr>`;
+                <li>
+                ${child.name}
+                ${child.code}
+                ${child.score}
+                <button onclick="deleteChild(${child.id})">Х</button>
+                    
+                </li>`;
             });
         });
 }
@@ -107,18 +106,20 @@ function getparentstasks() {
             data.forEach((i) => {
                 console.log(i);
                 list.innerHTML += `
-                <tr>
-                    <td>${children.find((ch) => ch.id == i.rab).name}</td>
-                    <td>${i.task}</td>
-                    <td>${i.price}</td>
-                    <td>${i.complete == 0 ? "НІ" : "ТАК"}</td>
-                    <td><button onclick="acceptTask(${i.id}, ${i.price}, ${
-                    i.rab
-                })">Прийняти</button></td>
-                    <td><button onclick="deleteTask(${
-                        i.id
-                    })">Видалити</button></td>
-                </tr>
+                <li>
+                <div class="taskInfo">
+                ${children.find((ch) => ch.id == i.rab).name}
+                ${i.task}
+                ${i.price}
+                ${i.complete == 0 ? "НІ" : "ТАК"}
+                </div>
+<div class="buttons">
+                <button onclick="acceptTask(${i.id}, ${i.price}, ${i.rab
+                    })">Прийняти</button>
+                <button onclick="deleteTask(${i.id
+                    })">Видалити</button>
+                    </div> 
+                </li>
                 `;
             });
         });
