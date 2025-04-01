@@ -1,58 +1,77 @@
-
-
-#logout{
+#logout {
     background-color: rgba(5, 73, 38, 0.386);
-    padding: 1rem;;
+    padding: 1rem;
+    ;
     color: rgb(255, 255, 255);
-    font-family: "Comfortaa", sans-serif; 
+    font-family: "Comfortaa", sans-serif;
     position: fixed;
     top: 1rem;
     right: 1rem;
 }
 
-#logout:hover{
-    background-color: var(--accent-200);;
+#logout:hover {
+    background-color: var(--accent-200);
+    ;
 }
 
-h1{
+h1 {
     margin: 1rem;
 }
 
-button{
+button {
     padding: 1rem;
 }
 
-/* #taskList{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    padding: 1rem;
-    background-color:var(--primary-200);
-    border-radius: 0.5rem;
+main {
+    max-width: 1224px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-#childList{
+#taskList li {
+    background-color: var(--primary-200);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    padding: 1rem;
-    background-color:var(--primary-200);
-    border-radius: 0.5rem;
-} */
-
-li{
-    background-color:var(--primary-200); 
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
+    margin: 1.5rem 0;
     padding: 1rem;
     border-radius: 1rem;
-    max-width: 80%;
+    color: var(--accent-200);
+
 }
 
-.taskInfo{
+.taskInfo {
     display: flex;
-    
+    flex-direction: column;
+    flex-grow: 4;
+}
+
+.buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.childList li {
+    background-color: var(--primary-200);
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    color: var(--accent-200);
+    justify-content: center;
+    gap: 0.5rem;
+    flex-grow: 1;
+
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

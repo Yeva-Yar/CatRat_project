@@ -9,6 +9,9 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
+        integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
+        crossorigin='anonymous' />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
@@ -26,8 +29,8 @@
     <main>
         <h2>Мій гаманець</h2>
         <div class="wallet">
-            <p>Ваш баланс:</p>
-            <h3>0</h3>
+            <span>Ваш баланс:</span>
+            <span id="balance">0</span>
             <button id="getMoney">Отримати гроші</button>
         </div>
         <h2>Список завдань:</h2>
@@ -44,11 +47,13 @@
         <div class="modal">
             <button id="closeModal">X</button>
             <h2>Завдання</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-            <h3>Ціна✨: </h3>
-            <h4>Статус виконання: </h4>
-            <button id="completeTask">Виконав</button>
-            <button id="unCompleteTask">Не виконав</button>
+            <h3 class="task"></h3>
+            <h4 class="price">Ціна✨: </h4>
+            <h4 class="status">Статус виконання: </h4>
+            <div class="buttonBar">
+                <button id="completeTask">Виконав</button>
+                <button id="unCompleteTask">Не виконав</button>
+            </div>
         </div>
     </div>
 

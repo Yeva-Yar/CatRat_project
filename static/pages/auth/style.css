@@ -1,10 +1,10 @@
-body{
-    background-color:#e8f1e5;
+body {
+    background-color: #e8f1e5;
     background-color: var(--bg-200);
 
 }
 
-.form{
+.form {
     background-color: var(--primary-200);
     border-radius: 1rem;
     margin: 1rem;
@@ -16,7 +16,7 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +25,7 @@ form{
     gap: 1rem;
 }
 
-button{
+button {
     background-color: var(--accent-200);
     padding: 0.45rem;
     border-radius: 0.5rem;
@@ -34,13 +34,13 @@ button{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-input{
+input {
     padding: 0.45rem;
     border-radius: 0.5rem;
     border: none;
 }
 
-input:focus{
+input:focus {
     border: none;
     outline-color: var(--primary-300);
 }
@@ -49,7 +49,7 @@ main {
     flex-grow: 1;
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,11 +68,11 @@ footer ul {
     margin-top: 0.5rem;
 }
 
-header{
+header {
     background-color: var(--primary-200);
     color: var(--accent-200);
     padding: 1rem;
-    margin:0 0 1rem;
+    margin: 0 0 1rem;
     font-size: 3rem;
     display: flex;
     justify-content: center;
@@ -80,29 +80,30 @@ header{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.sig{
+.sig {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 1rem;
     color: var(--accent-200);
-   padding: 1rem;
+    padding: 1rem;
+    text-align: center;
 }
 
-.signup{
-margin: 1rem;
-}
-
-.kid{
+.signup {
     margin: 1rem;
 }
 
-.b{
+.kid {
+    margin: 1rem;
+}
+
+.b {
     display: flex;
     align-items: center;
 }
 
-form h2{
+form h2 {
     color: var(--accent-200);
 }

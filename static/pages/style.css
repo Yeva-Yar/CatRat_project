@@ -14,25 +14,25 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color:#e8f1e5;
+    background-color: #e8f1e5;
     background-color: var(--bg-200);
 }
 
 :root {
-    --primary-100:#A4E8B8;
-    --primary-200:#87c99b;
-    --primary-300:#45855b;
-    --accent-100:#6BCB9F;
-    --accent-200:#006b45;
-    --text-100:#333333;
-    --text-200:#5c5c5c;
-    --bg-100:#F2FBEF;
-    --bg-200:#e8f1e5;
-    --bg-300:#bfc8bd;  
+    --primary-100: #A4E8B8;
+    --primary-200: #87c99b;
+    --primary-300: #45855b;
+    --accent-100: #6BCB9F;
+    --accent-200: #08583c;
+    --text-100: #333333;
+    --text-200: #5c5c5c;
+    --bg-100: #F2FBEF;
+    --bg-200: #e8f1e5;
+    --bg-300: #bfc8bd;
 }
 
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,11 +55,11 @@ main {
     flex-grow: 1;
 }
 
-header{
+header {
     background-color: var(--primary-200);
     color: var(--accent-200);
     padding: 1rem;
-    margin:0 0 1rem;
+    margin: 0 0 1rem;
     font-size: 3rem;
     display: flex;
     justify-content: center;
@@ -67,19 +67,22 @@ header{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-input, button {
+input,
+button {
     padding: 10px;
     margin: 10px 0;
 }
+
 #taskList {
     list-style-type: none;
     padding: 0;
 }
+
 .task {
     margin: 5px 0;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,9 +91,9 @@ form{
     gap: 1rem;
 }
 
-button{
+button {
     background-color: var(--accent-200);
-    font-family: "Comfortaa", sans-serif; 
+    font-family: "Comfortaa", sans-serif;
     margin: 1rem;
     padding: 0.45rem;
     border-radius: 0.5rem;
@@ -99,18 +102,18 @@ button{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-input{
+input {
     padding: 0.45rem;
     border-radius: 0.5rem;
     border: none;
 }
 
-input:focus{
+input:focus {
     border: none;
     outline-color: var(--primary-300);
 }
 
-.form{
+.form {
     background-color: var(--primary-200);
     border-radius: 1rem;
     margin: 1rem;

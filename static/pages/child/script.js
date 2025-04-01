@@ -13,13 +13,12 @@ function getChildrenTasks() {
                 list.innerHTML += `
             <li class="block" onclick="openTask(${JSON.stringify(task.id)})">
             <h4>${task.task}</h4>
-            <input type="checkbox" ${
-                task.complete == 0 ? "" : "checked"
-            } disabled>
+            <i class="fa-solid fa-square-check" style="color:${task.complete == 0 ? "red" : ""
+                    }"></i>
             </li>
             `;
             });
-            
+
         });
 }
 
@@ -33,10 +32,10 @@ function openTask(id) {
         .then((res) => res.json())
         .then((data) => {
             task = data[0];
-            document.querySelector(".modal p").innerHTML = task.task;
-            document.querySelector(".modal h3").innerHTML =
+            document.querySelector(".modal .task").innerHTML = task.task;
+            document.querySelector(".modal .price").innerHTML =
                 "Ціна✨:" + task.price;
-            document.querySelector(".modal h4").innerHTML =
+            document.querySelector(".status").innerHTML =
                 "Статус виконання: " + (task.complete == 0 ? "НІ" : "ТАК");
         });
 }
@@ -98,7 +97,7 @@ function getMoney(value) {
 document.querySelector("#getMoney").addEventListener("click", () => {
     alertify.prompt("Ви хочете отримати кошти?", 0, (e, value) => {
         if (value) {
-            if(value > childrenMoney){
+            if (value > childrenMoney) {
                 alertify.error("Недостатньо коштів");
                 return;
             }
@@ -123,12 +122,12 @@ document.querySelector("#logout").addEventListener("click", () => {
 });
 
 let childrenMoney = 0;
-function getChildrenMoney(){
+function getChildrenMoney() {
     fetch(`/api/getChildrenMoney`)
         .then((res) => res.json())
         .then((data) => {
             childrenMoney = data.score;
-            document.querySelector(".wallet h3").innerHTML = data.score;
+            document.querySelector(".wallet #balance").innerHTML = data.score;
         });
 }
 

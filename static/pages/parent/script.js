@@ -35,13 +35,16 @@ function getChildren() {
             data.forEach((child) => {
                 list.innerHTML += `
                 <li>
-                ${child.name}
-                ${child.code}
-                ${child.score}
+                <div class = "info">
+                    <h3>Iмя: ${child.name}</h3>
+                    <h4>Баланс: ${child.score}</h4>
+                </div>
+                <button onclick="copyCode('${child.code}')">Копіювати реєстраційний код</button>
                 <button onclick="deleteChild(${child.id})">Х</button>
                     
                 </li>`;
             });
+            getparentstasks();
         });
 }
 
@@ -107,16 +110,16 @@ function getparentstasks() {
                 console.log(i);
                 list.innerHTML += `
                 <li>
-                <div class="taskInfo">
-                ${children.find((ch) => ch.id == i.rab).name}
-                ${i.task}
-                ${i.price}
-                ${i.complete == 0 ? "НІ" : "ТАК"}
-                </div>
-<div class="buttons">
-                <button onclick="acceptTask(${i.id}, ${i.price}, ${i.rab
+                    <div class="taskInfo">
+                        <h4>${i.task}</h4>
+                        <p>Виконавець: ${children.find((ch) => ch.id == i.rab).name}</p>
+                        <p>Ціна: ${i.price}</p>
+                        <p>Стан: ${i.complete == 0 ? "НІ" : "ТАК"}</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="acceptTask(${i.id}, ${i.price}, ${i.rab
                     })">Прийняти</button>
-                <button onclick="deleteTask(${i.id
+                        <button onclick="deleteTask(${i.id
                     })">Видалити</button>
                     </div> 
                 </li>
@@ -124,7 +127,7 @@ function getparentstasks() {
             });
         });
 }
-getparentstasks();
+// getparentstasks();
 
 function deleteTask(id) {
     fetch("/api/deleteTask?id=" + id)
@@ -145,3 +148,14 @@ document.querySelector("#logout").addEventListener("click", () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
     window.location.assign("/");
 });
+
+
+function copyCode(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alertify.success("Код скопійовано");
+        })
+        .catch(err => {
+            alertify.error("Код не скопійовано");
+        });
+}

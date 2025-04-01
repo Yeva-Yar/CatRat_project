@@ -1,21 +1,21 @@
-body{
+body {
     background-color: rgb(246, 234, 211);
 }
 
-header h3{
+header h3 {
     font-family: "Rubik Spray Paint", system-ui;
     font-weight: 200;
     font-style: normal;
     color: rgb(81, 212, 212);
-  }
-  
-  footer{
+}
+
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 1rem;
-    background-color:rgb(213, 163, 210);
+    background-color: rgb(213, 163, 210);
     color: var(--bg-200);
     padding: 1rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -32,10 +32,10 @@ main {
     flex-grow: 1;
 }
 
-header{
+header {
     background-color: rgb(251, 255, 137);
     padding: 1rem;
-    margin:0 0 1rem;
+    margin: 0 0 1rem;
     font-size: 3rem;
     display: flex;
     justify-content: center;
@@ -43,35 +43,44 @@ header{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-input, button {
+input,
+button {
     padding: 10px;
     margin: 10px 0;
 }
+
 #taskList {
     list-style-type: none;
     padding: 0;
     background-color: rgb(149, 227, 192);
     border-radius: 1.2rem;
     margin: 1rem;
-    padding: 1rem;
+    padding: 0.7rem 1rem;
+    font-size: 1.2rem;
 }
+
 .task {
     margin: 5px 0;
 }
 
-.block{
+.block {
     display: flex;
     justify-content: space-between;
     border-top: 3px solid rgb(246, 234, 211);
-    padding: 1rem;
+    padding: 0.5rem;
     color: white;
+    align-items: center;
 }
 
-.block h4{
+.block:first-child {
+    border-top: none;
+}
+
+.block h4 {
     text-shadow: 0px 0px 10px rgba(25, 40, 60, 0.812);
 }
 
-.block input{
+.block input {
     width: 20px;
     height: 20px;
     accent-color: rgb(84, 188, 112);
@@ -87,14 +96,13 @@ input, button {
 }
 
 .modal {
-    background-color: rgb(250, 189, 206);
-    color: white;
+    background-color: rgb(255, 253, 192);
+    color: rgb(111, 122, 173);
     padding: 3rem 0.5rem 0.5rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     max-width: 40rem;
     position: relative;
-    min-height: 80vh;
     width: 80%;
 }
 
@@ -107,19 +115,19 @@ input, button {
     background-color: rgb(81, 212, 212);
 }
 
-.modal h2{
+.modal h2 {
     font-size: 1.5rem;
     text-align: center;
 }
 
-.modal p{
-   
+.modal p {
+
     margin: 0.9rem 0;
 
 }
 
-.modal h3{
-margin-top: 1rem;
+.modal h3 {
+    margin-top: 1rem;
 }
 
 .check {
@@ -153,34 +161,62 @@ margin-top: 1rem;
     background-color: rgb(81, 212, 212);
 }
 
-#getMoney{
-background-color:rgb(251, 255, 137);
-padding: 1rem;;
-color: rgb(0, 0, 0);
-font-family: "Comfortaa", sans-serif;
-}   
+#getMoney {
+    background-color: rgb(251, 255, 137);
+    padding: 1rem;
+    ;
+    color: rgb(0, 0, 0);
+    font-family: "Comfortaa", sans-serif;
+}
 
-.wallet{
+.wallet {
     margin: 1rem;
     padding: 1rem;
     background-color: rgb(250, 189, 206);
     border-radius: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    align-items: center;
 }
- 
-h2{
+
+h2 {
     margin-left: 1rem;
 }
 
-#logout{
-    background-color:rgba(213, 163, 210, 0.504) ;
-    padding: 1rem;;
+#balance {
+    flex-grow: 1;
+}
+
+#logout {
+    background-color: rgba(213, 163, 210, 0.504);
+    padding: 1rem;
+    ;
     color: rgb(255, 255, 255);
-    font-family: "Comfortaa", sans-serif; 
+    font-family: "Comfortaa", sans-serif;
     position: fixed;
     top: 1rem;
     right: 1rem;
 }
 
-#logout:hover{
-    background-color:rgb(213, 163, 210);
+#logout:hover {
+    background-color: rgb(213, 163, 210);
+}
+
+.buttonBar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.buttonBar button {
+    background-color: rgb(146, 247, 153);
+    margin-left: 0.5rem;
+    flex-grow: 1;
+    color: white;
+}
+
+#unCompleteTask {
+    background-color: rgb(222, 122, 117);
+    color: white;
 }
