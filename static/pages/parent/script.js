@@ -4,7 +4,7 @@ document.querySelector("#addChild").addEventListener("click", () => {
             let body = JSON.stringify({
                 name: value,
             });
-            console.log(body);
+
             fetch("/api/createChild", {
                 method: "POST",
                 headers: {
@@ -107,7 +107,6 @@ function getparentstasks() {
         .then((res) => res.json())
         .then((data) => {
             data.forEach((i) => {
-                console.log(i);
                 list.innerHTML += `
                 <li>
                     <div class="taskInfo">

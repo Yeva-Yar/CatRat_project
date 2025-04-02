@@ -56,7 +56,6 @@ document.querySelector("#register-form").addEventListener("submit", (e) => {
         login: obj.login,
         password: obj.password
     });
-    console.log(obj)
     fetch("/api/register", {
         method: "POST",
         body,
@@ -81,7 +80,6 @@ document.querySelector("#login-form").addEventListener("submit", (e) => {
     }).then((res) => res.json()).then((data) => {
         localStorage.setItem("token", data.token);
         document.cookie = `token=${data.token}; path=/`;
-        console.log(data);
         window.location.assign("/")
     });
 })
@@ -93,12 +91,14 @@ document.querySelector("#children-form").addEventListener("submit", (e) => {
     let body = JSON.stringify({
         code: data.get("login"),
     });
-    console.log(body)
     fetch("/api/childLogin", {
         method: "POST",
         body,
     }).then((res) => res.json()).then((d) => {
-        if(d.status = "ok") {
+        if(d.message) {
+            alertify.alert(d.message);
+        }
+        else if(d.status = "ok") {
             document.cookie = `token=${data.get("login")}; path=/`;
             window.location.assign("/")
         }
