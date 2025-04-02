@@ -13,8 +13,8 @@ function getChildrenTasks() {
                 list.innerHTML += `
             <li class="block" onclick="openTask(${JSON.stringify(task.id)})">
             <h4>${task.task}</h4>
-            <i class="fa-solid fa-square-check" style="color:${task.complete == 0 ? "rgb(222, 122, 117)" : ""
-                    }"></i>
+            <i class="fa-solid fa-square-check" style="color:${task.complete == 0 ? "rgb(222, 122, 117)  " : ""
+                    }"></ i> 
             </li>
             `;
             });
@@ -96,7 +96,8 @@ function getMoney(value) {
 
 document.querySelector("#getMoney").addEventListener("click", () => {
     alertify.prompt("Ви хочете отримати кошти?", 0, (e, value) => {
-        if (value && typeof value === "number" && value > 0) {
+        value = Number(value);
+        if (value && value > 0) {
             if (value > childrenMoney) {
                 alertify.error("Недостатньо коштів");
                 return;
