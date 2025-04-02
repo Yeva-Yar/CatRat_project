@@ -220,3 +220,17 @@ h2 {
     background-color: rgb(222, 122, 117);
     color: white;
 }
+
+#download {
+    background-color: rgb(251, 255, 137);
+    padding: 1rem;
+    ;
+    color: rgb(0, 0, 0);
+    font-family: "Comfortaa", sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        font-size: 1.5rem;
+    }
+}

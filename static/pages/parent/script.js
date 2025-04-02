@@ -1,6 +1,9 @@
 document.querySelector("#addChild").addEventListener("click", () => {
-    alertify.prompt("Child Name", "", (evt, value) => {
-        if (value) {
+    alertify.prompt("Ім'я дитини", "", (evt, value) => {
+        value = value.trim();
+        if (value.length < 1) {
+            alertify.error("Напишіть ім'я дитини");
+        }else{
             let body = JSON.stringify({
                 name: value,
             });
@@ -16,7 +19,7 @@ document.querySelector("#addChild").addEventListener("click", () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    alertify.alert("Child code: " + data.code);
+                    alertify.alert("Дитину зареєстровано");
                     getChildren();
                 });
         }
@@ -61,9 +64,20 @@ document.querySelector("#addTask").addEventListener("click", () => {
     alertify.prompt("Напишіть опис завдання", "", function (e, val) {
         if (e) {
             task.task = val;
+            if (task.task.length < 2) {
+                alertify.error("Напишіть опис завдання");
+                return;
+            }
             setTimeout(() => {
                 alertify.prompt("Яка буде винагорода", "", function (e, val) {
                     if (e) {
+                        if(val < 0) {
+                            alertify.error("Винагорода не може бути від'ємною");
+                            return
+                        }else if(!Number(val)) {
+                            alertify.error("Винагорода повинна бути числом");
+                            return
+                        }
                         task.price = parseInt(val) || 0;
                         setTimeout(() => {
                             alertify.prompt(
@@ -113,7 +127,7 @@ function getparentstasks() {
                         <h4>${i.task}</h4>
                         <p>Виконавець: ${children.find((ch) => ch.id == i.rab).name}</p>
                         <p>Ціна: ${i.price}</p>
-                        <p>Стан: ${i.complete == 0 ? "НІ" : "ТАК"}</p>
+                        <p>Стан виконання: ${i.complete == 0 ? "НІ" : "ТАК"}</p>
                     </div>
                     <div class="buttons">
                         <button onclick="acceptTask(${i.id}, ${i.price}, ${i.rab
