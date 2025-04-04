@@ -12,7 +12,7 @@ function getChildrenMoney(req, res) {
 
     // запит до бази даних для отримання поточного балансу
     db.query(
-        "select score from MicroUsers where code = ?",
+        "select score, id from MicroUsers where code = ?",
         [token],
         (err, result) => {
             res.writeHead(200, { "content-type": "text/json" });

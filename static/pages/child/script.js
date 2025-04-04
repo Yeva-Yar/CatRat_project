@@ -83,7 +83,7 @@ function getMoney(value) {
     // Дані
     ctx.font = "14px Arial";
     ctx.fillText(`Знято: ${value} грн`, 20, 60);
-    ctx.fillText(`Баланс: ${tasks[0].score - value} грн`, 20, 110);
+    ctx.fillText(`Баланс: ${childrenMoney - value} грн`, 20, 110);
 
     // Кнопка для завантаження
     document.getElementById("download").addEventListener("click", function () {
@@ -103,10 +103,11 @@ document.querySelector("#getMoney").addEventListener("click", () => {
                 return;
             }
             getMoney(value);
-            fetch(`/api/getMoney?id=${tasks[0].rab}&value=${value}`)
+            fetch(`/api/getMoney?id=${rab}&value=${value}`)
                 .then((res) => res.ok)
                 .then((data) => {
                     getChildrenTasks();
+                    getChildrenMoney();
                 });
         }else{
             alertify.error("Некоректно введені дані");
@@ -123,13 +124,14 @@ document.querySelector("#logout").addEventListener("click", () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
     window.location.assign("/");
 });
-
+let rab = 0;
 let childrenMoney = 0;
 function getChildrenMoney() {
     fetch(`/api/getChildrenMoney`)
         .then((res) => res.json())
         .then((data) => {
             childrenMoney = data.score;
+            rab = data.id;
             document.querySelector(".wallet #balance").innerHTML = data.score;
         });
 }
